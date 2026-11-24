@@ -1,6 +1,6 @@
 # Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness
 
-[![Embo-Harness Paper](https://img.shields.io/badge/Embo_Harness-2602.18532v2-b31b1b.svg)]()
+[![Embo-Harness on arXiv](https://img.shields.io/badge/arXiv-2611.31201-b31b1b.svg)](https://arxiv.org/abs/2611.31201)
 [![Project Page](https://img.shields.io/badge/Project-Page-green)](https://dravenalg.github.io/projects/Embo-Harness/)
 
 **Embo-Harness** studies how frontier models can serve directly as robot policies, through two questions:
@@ -180,7 +180,17 @@ python scripts/read_harness_results.py outputs/embo_harness/test
 If you find our work and code useful, or build on Embo-Harness, please also cite our paper.
 
 ```bibtex
-
+@misc{wu2026_emboharness,
+  title={Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness},
+  author={Xiao-Ming Wu and Kang Liao and Yuexiao Ma and Taolin Zhang and Mingqian Zhou
+          and Nuo Chen and Ziming Li and Yihang Luo and Rui Li and Zhonghua Wu and Tianyu Xie
+          and Xiawu Zheng and Zhongang Cai and Zhi Hou and Chen Change Loy},
+  year={2026},
+  eprint={2611.31201},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2611.31201},
+}
 ```
 
 ## 🗞️ License

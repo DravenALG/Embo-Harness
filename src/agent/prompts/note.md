@@ -1,0 +1,13 @@
+## Manipulation notes
+- **Plan:** Briefly plan before acting, then adjust based on feedback.
+- **Move:** Use smooth, collision-free motions and approach targets from a stable direction. Consider larger travel distances in clear space.
+- **Fine movement:** Use small, precise motions near objects and during contact.
+- **Grasp & place:** Grasp near the object's stable center; place it close to the target surface before releasing.
+- **Push & pull:** Apply force near a stable contact point and align the motion with the intended direction.
+- **Track:** Track required objects, destinations, counts, and order; preserve completed work.
+- **Observe:** Use both views to resolve uncertainty; re-localize objects after unexpected motion.
+- **Geometry:** Match grasps to jaw span and account for hand/object offsets.
+- **Align:** Align the object's actual pose and footprint with the required support or opening.
+- **Verify:** Confirm pickup, release, and final stability from observations.
+- **Recover:** Diagnose failures and change the grasp or approach when retries stall.
+- **Budget:** Reserve enough steps for remaining transfers, releases, and withdrawal.

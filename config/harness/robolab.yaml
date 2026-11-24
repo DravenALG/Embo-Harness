@@ -1,0 +1,42 @@
+# ------Prompting------
+codex_prompt: src/agent/prompts/system.md
+include_note: false # Notice reminders distilled from failure cases.
+note_file: note.md # Bundled notice-reminder file.
+log_dir: outputs/harness
+image_size: 640 # Visual resolution: maximum image side in pixels.
+views: multi # single: third-person; multi: third-person + wrist.
+
+# ------Planning------
+# GPT: gpt-6-astra, gpt-6.1-sol, gpt-6.2-astra
+# Claude: claude-fable-5-2
+model: gpt-6.2-astra
+reasoning_effort: xhigh
+timeout: 5400 # Action-generation timeout in seconds, including retries.
+codex_stream_idle_timeout: 600 # Model stream idle timeout (seconds).
+codex_max_retries: 30 # Model request/stream retries; 0 disables retries.
+codex_source: system # local: compiled Codex; system: Codex from PATH.
+codex_local_path: # Required only with codex_source: local; path to a compiled Codex binary.
+plan: false # true: explicit subgoal planning; false: implicit planning.
+
+# ------Action Execution------
+action_format: eef_absolute # eef_absolute, eef_delta, joint_absolute, joint_delta, eef_destination.
+eef_destination_translation_speed: 1.2 # EEF destination translation limit (m/s).
+eef_destination_rotation_speed: 6.0 # EEF destination rotation limit (rad/s).
+disable_ik: false # Joint-level bias: prompt-only IK/FK ban; joint formats only.
+adaptive_action_chunk: false # Adaptive chunking: model selects each target's duration.
+action_chunk_size: 8 # Fixed chunk length (control frames); ignored in adaptive mode.
+direct_action_chunk: false # Frame-wise action generation (trajectory-level bias).
+async_inference: false # Asynchronous execution: overlap inference and motion.
+async_tail_steps: 5 # Control frames reserved for inference overlap.
+include_async_prompt: true # Include guidance when asynchronous execution is enabled.
+
+# ------Tool Use------
+multiact: true # Short multi-action sequences in one tool call.
+vla: # VLA integration (pi0.5).
+  enabled: false # Enable VLA selection or refinement.
+  checkpoint: /data/NTU_slab/draven/.cache/openpi/openpi-assets-simeval/pi05_droid_jointpos/pi05_droid_jointpos
+  port: 9000
+  startup_timeout: 1200 # Model loading and warmup timeout (seconds).
+  timeout: 60 # Prediction timeout (seconds); return control to the frontier model.
+# Requires vla.enabled; ordinary act/multiact retain their durations.
+vla_as_reference: false # VLA refinement via refine_act (15 frames); false: VLA selection.

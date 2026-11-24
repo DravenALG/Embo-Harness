@@ -1,0 +1,13 @@
+# Package for Embo-Harness
+PyYAML
+Pillow
+numpy
+scipy
+msgpack
+websockets>=15
+
+# Package for the RoboLab adapter
+openpi-client==0.1.2
+
+# Package for Position-estimation
+requests

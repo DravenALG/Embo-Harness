@@ -1,0 +1,7 @@
+[submodule "third_party/RoboLab"]
+	path = third_party/RoboLab
+	url = https://github.com/DravenALG/RoboLab.git
+	branch = main
+[submodule "third_party/openpi"]
+	path = third_party/openpi
+	url = https://github.com/DravenALG/openpi.git
